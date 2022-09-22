@@ -1,7 +1,8 @@
 import React from 'react'
 import {useState,useEffect} from 'react'
 import {useParams,Link} from 'react-router-dom'
-import {Row,Col,Image, ListGroup, ListGroupItem} from 'react-bootstrap'
+import {Row,Col,Image, ListGroup,Card} from 'react-bootstrap'
+import Rating from './Rating'
 function RestaurantDetails() {
 
   const [data,setData] = useState([])
@@ -55,6 +56,11 @@ function RestaurantDetails() {
             </ListGroup.Item>
           </ListGroup>
         </Col>
+        <Row>
+          <Card className="my-3 p-3 mx-3 rounded card">
+            <Rating data = {details.reviews}/>
+          </Card>
+        </Row>
       </Row>
       ):'null'}   
     </>
