@@ -1,10 +1,11 @@
 import React from 'react'
-import {Card,Button} from 'react-bootstrap'
-
+import {Card} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 function RestaurantCard({item}) {
     
   return (
-    <Card className='my-3 p-3 rounded cards'>
+    <Link to ={`details/${item.id}`}>{/*string interpolation*/}
+     <Card className='my-3 p-3 rounded cards'>
       <Card.Img variant="top" src={item.photograph} />
       <Card.Body>
         <Card.Title>{item.name}</Card.Title>
@@ -15,6 +16,8 @@ function RestaurantCard({item}) {
         
       </Card.Body>
     </Card>
+    </Link>
+   
   )
 }
 
